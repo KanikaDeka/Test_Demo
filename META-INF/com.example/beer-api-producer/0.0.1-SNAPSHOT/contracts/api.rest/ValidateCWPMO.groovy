@@ -1,4 +1,3 @@
-package contracts.employee.rest
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make{
@@ -18,7 +17,8 @@ Contract.make{
         jsonPath('$.age',byRegex('[2-9][0-9]'))
         jsonPath('$.salary',byRegex('[1-9][0-9]{5}'))
         jsonPath('$.designation',byRegex('[A-Za-z]+'))
-        jsonPath('$.address['*'].zipCode',byRegex('[0-9]{5}'))
+        jsonPath("\$.['address'][*].['zipCode']",byRegex('[0-9]{5}'))
+
 
 
     }
